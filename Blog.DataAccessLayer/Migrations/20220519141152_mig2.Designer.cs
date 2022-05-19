@@ -4,14 +4,16 @@ using Blog.DataAccessLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Blog.DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20220519141152_mig2")]
+    partial class mig2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -112,12 +114,6 @@ namespace Blog.DataAccessLayer.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ArticleBlogID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BlogID")
-                        .HasColumnType("int");
-
                     b.Property<string>("CommentContent")
                         .HasColumnType("nvarchar(max)");
 
@@ -134,8 +130,6 @@ namespace Blog.DataAccessLayer.Migrations
                         .HasColumnType("bit");
 
                     b.HasKey("CommentId");
-
-                    b.HasIndex("ArticleBlogID");
 
                     b.ToTable("Comments");
                 });
@@ -209,20 +203,6 @@ namespace Blog.DataAccessLayer.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("Blog.EntityLayer.Concrete.Comment", b =>
-                {
-                    b.HasOne("Blog.EntityLayer.Concrete.Article", "Article")
-                        .WithMany("Comments")
-                        .HasForeignKey("ArticleBlogID");
-
-                    b.Navigation("Article");
-                });
-
-            modelBuilder.Entity("Blog.EntityLayer.Concrete.Article", b =>
-                {
-                    b.Navigation("Comments");
                 });
 
             modelBuilder.Entity("Blog.EntityLayer.Concrete.Category", b =>
