@@ -23,4 +23,8 @@
     <Folder Include="Repositories\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.EntityLayer\Blog.EntityLayer.csproj" />
+  </ItemGroup>
+
 </Project>

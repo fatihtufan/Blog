@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.DataAccessLayer\Blog.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\Blog.EntityLayer\Blog.EntityLayer.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Blog.EntityLayer.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,12 @@ namespace Blog.DataAccessLayer.Concrete
         {
             optionsBuilder.UseSqlServer("server=FATIHTUFAN;database=CoreBlogDb; integrated security=true;");
         }
+        public DbSet<About> Abouts { get; set; }
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<Category> Catogries { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Writer> Writers { get; set; }
 
     }
 }

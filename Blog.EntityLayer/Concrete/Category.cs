@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Blog.EntityLayer.Concrete
 {
-    public class Catogry
+    public class Category
     {
         // Erişim belirleyici türü - Değişken türü - isim{get set}
         [Key]
