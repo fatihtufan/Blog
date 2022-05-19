@@ -20,6 +20,11 @@ namespace Blog.DataAccessLayer.Repositories
 
         }
 
+        public void Delete(Article t)
+        {
+            throw new NotImplementedException();
+        }
+
         public void DeleteArticle(Article article)
         {
             using var c = new Context();
@@ -33,10 +38,25 @@ namespace Blog.DataAccessLayer.Repositories
             return c.Articles.Find(id);
         }
 
+        public List<Article> GetListAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Insert(Article t)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Article> ListAllArticle()
         {
             using var c = new Context();
             return c.Articles.ToList();
+        }
+
+        public void Update(Article t)
+        {
+            throw new NotImplementedException();
         }
 
         public void UpdateArticle(Article article)
